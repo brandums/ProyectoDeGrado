@@ -1,0 +1,64 @@
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{tituloForm}}</h5>
+      <button type="button" id="bClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiarForm()"></button>
+    </div>
+    <div class="modal-body">
+      <form class="row g-3 needs-validation" name="formularioRecordatorio" novalidate>
+        <div class="col-12">
+          <input type="text" class="form-control" name="Titulo" id="validacionTitulo" placeholder="Titulo" minlength="5" maxlength="30" onpaste="return false;" (keydown)="validarTexto($event)" [(ngModel)]="recordatorio.titulo" required>
+          <div class="invalid-feedback">
+            {{ !recordatorio.titulo ? 'Por favor ingrese un titulo.' : 'Ingrese un titulo mas completo.' }}
+          </div>
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" name="Descripcion" id="validacionDescripcion" placeholder="Descripcion" minLength="2" maxlength="80" [(ngModel)]="recordatorio.descripcion" required>
+          <div class="invalid-feedback">
+            Por favor ingrese la descripcion.
+          </div>
+        </div>
+        <div class="col-12 d-flex f-direction-row">
+          <div class="col-7" style="padding-right: 10px">
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">Fecha:</span>
+              <input type="date" class="form-control" name="Fecha" id="validacionFecha" placeholder="Fecha" [min]="obtenerFecha()" onkeydown="return false" [(ngModel)]="recordatorio.fecha" required />
+              <div class="invalid-feedback">
+                Por favor seleccione una fecha.
+              </div>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">Hora:</span>
+              <input type="time" class="form-control" name="Hora" id="validacionHora" placeholder="Hora" [(ngModel)]="recordatorio.hora" required>
+              <div class="invalid-feedback">
+                Por favor seleccione una hora.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <select class="form-select" name="Cliente" id="validacionCliente" [(ngModel)]="recordatorio.clienteId" required>
+            <option value="" disabled selected>Selecciona un cliente</option>
+            <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }} {{ cliente.apellido }}</option>
+          </select>
+          <div class="invalid-feedback">
+            Por favor seleccion un cliente.
+          </div>
+        </div>
+        <div class="col-12  d-flex justify-content-end">
+          <button *ngIf="recordatorioId === 0" class="btn btn-primary" type="submit" [disabled]="creandoRecordatorio" (click)="iniciarValidadores()">
+            <span *ngIf="!creandoRecordatorio">Crear recordatorio</span>
+            <span *ngIf="creandoRecordatorio">Creando recordatorio...</span>
+          </button>
+
+          <button *ngIf="recordatorioId !== 0" class="btn btn-primary" type="submit" [disabled]="creandoRecordatorio" (click)="iniciarValidadores()">
+            <span *ngIf="!creandoRecordatorio">Actualizar</span>
+            <span *ngIf="creandoRecordatorio">Actualizando...</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

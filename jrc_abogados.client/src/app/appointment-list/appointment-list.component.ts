@@ -1,0 +1,77 @@
+import { Component, OnInit } from '@angular/core';
+import { Cita } from '../Models/Cita';
+import { CitaService } from '../services/cita-service';
+
+@Component({
+  selector: 'app-appointment-list',
+  templateUrl: './appointment-list.component.html'
+})
+export class AppointmentListComponent implements OnInit {
+  citas: Cita[] = [];
+  buscarPalabra: string = '';
+  citaSeleccionada: Cita | null = null;
+
+  paginaActual: number = 1;
+  clientesPorPagina: number = 10;
+
+  campoFiltro: string = 'cliente.nombre';
+
+  constructor(
+    private citaService: CitaService,
+  ) { }
+
+  ngOnInit(): void {
+    this.getCitas();
+
+    this.citaService.$listaCitas.subscribe(data => this.citas = data);
+  }
+
+  seleccionarCita(citaId: number) {
+    this.citaService.seleccionarCita(citaId);
+  }
+
+  verCita(cliente: Cita) {
+    this.citaSeleccionada = cliente;
+  }
+
+  editarCita(clienteId: number) {
+    this.seleccionarCita(clienteId);
+  }
+
+  getCitas(): void {
+    this.citaService.getCitas().subscribe((cita: Cita[]) => this.citas = cita);
+  }
+
+  get filtroCitas(): Cita[] {
+    return this.citas.filter(cita => {
+      const valor = this.obtenerValor(cita, this.campoFiltro);
+      return valor && valor.toString().toLowerCase().includes(this.buscarPalabra.toLowerCase());
+    });
+  }
+
+  obtenerValor(obj: any, ruta: string): any {
+    return ruta.split('.').reduce((o, i) => o?.[i], obj);
+  }
+
+
+  eliminarCita(id: number): void {
+    this.citaService.eliminarCita(id).subscribe(() => {
+      this.citas = this.citas.filter(cita => cita.id !== id);
+    });
+  }
+
+  // Métodos para la paginación
+  get clientesPaginados(): Cita[] {
+    const inicio = (this.paginaActual - 1) * this.clientesPorPagina;
+    const fin = inicio + this.clientesPorPagina;
+    return this.filtroCitas.slice(inicio, fin);
+  }
+
+  cambiarPagina(pagina: number): void {
+    this.paginaActual = pagina;
+  }
+
+  get totalPaginas(): number {
+    return Math.ceil(this.filtroCitas.length / this.clientesPorPagina);
+  }
+}

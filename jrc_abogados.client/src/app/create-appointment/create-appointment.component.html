@@ -1,0 +1,109 @@
+<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{tituloForm}}</h5>
+      <button type="button" id="bClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="limpiarForm()"></button>
+    </div>
+    <div class="modal-body">
+      <form class="row g-3 needs-validation" name="formularioCita" novalidate>
+        <div class="col-12">
+          <select class="form-control" name="TipoCita" id="validacionTipoCita" [(ngModel)]="cita.tipoCita" required>
+            <option value="" disabled selected>Seleccione un tipo de cita</option>
+            <option value="Presencial">Presencial</option>
+            <option value="Telefónica">Telefónica</option>
+            <option value="Virtual">Virtual</option>
+          </select>
+          <div class="invalid-feedback">
+            Por favor seleccione el tipo de cita.
+          </div>
+        </div>
+        <div class="col-12 d-flex f-direction-row">
+          <div class="col-7" style="padding-right: 10px">
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">Fecha:</span>
+              <input type="date" class="form-control" name="FechaInicio" id="validacionFechaInicio" placeholder="Fecha de inicio" [max]="FechaMaxima()" [min]="FechaMinima()" onkeydown="return false" [(ngModel)]="cita.fechaInicio" required />
+              <div class="invalid-feedback">
+                Por favor seleccione una fecha.
+              </div>
+            </div>
+          </div>
+          <div class="col-5">
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">Hora:</span>
+              <input type="time" class="form-control" name="Hora" id="validacionHora" placeholder="Hora" [(ngModel)]="cita.hora" required />
+              <div class="invalid-feedback">
+                Ingrese la hora.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" name="Notas" id="validacionNotas" placeholder="Descripcion" minLength="2" maxlength="80" [(ngModel)]="cita.notas" required>
+          <div class="invalid-feedback">
+            {{ !cita.notas ? 'Por favor ingrese una descripcion.' : 'Por favor ingrese una descripcion válida.' }}
+          </div>
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" name="Direccion" id="validacionDireccion" placeholder="Direccion" minlength="8" maxlength="30" [(ngModel)]="cita.ubicacion.direccion" required>
+          <div class="invalid-feedback">
+            {{ !cita.ubicacion.direccion ? 'Por favor ingrese su direccion.' : 'Ingrese una ubicacion mas completa.' }}
+          </div>
+        </div>
+        <div class="col-12">
+          <select class="form-select" name="EstadoUbi" id="validacionEstado" [(ngModel)]="cita.ubicacion.estado" (change)="onStateChange(cita.ubicacion.estado)" required>
+            <option value="" disabled selected>Seleccione un estado</option>
+            <option *ngFor="let estadoUbi of estadosUbi" [value]="estadoUbi">{{ estadoUbi }}</option>
+          </select>
+          <div class="invalid-feedback">
+            {{ !cita.ubicacion.estado ? 'Por favor seleccione su estado.' : 'Seleccione un estado válido.' }}
+          </div>
+        </div>
+        <div class="col-12">
+          <select class="form-select" name="Ciudad" id="validacionCiudad" [(ngModel)]="cita.ubicacion.ciudad" required>
+            <option value="" disabled selected>Seleccione una ciudad</option>
+            <option *ngFor="let ciudad of ciudades" [value]="ciudad">{{ ciudad }}</option>
+          </select>
+          <div class="invalid-feedback">
+            {{ !cita.ubicacion.ciudad ? 'Por favor seleccione su ciudad.' : 'Seleccione una ciudad válida.' }}
+          </div>
+        </div>
+        <div class="col-12">
+          <input type="text" class="form-control" name="CodigoPostal" id="validacionCodigoPostal" placeholder="Codigo Postal" minlength="5" maxlength="5" (paste)="limitarNumeros($event)" (keydown)="limitarNumeros($event)" [(ngModel)]="cita.ubicacion.codigoPostal" required>
+          <div class="invalid-feedback">
+            {{ !cita.ubicacion.codigoPostal ? 'Por favor ingrese su codigo postal.' : 'El codigo postal debe tener 5 caracteres.' }}
+          </div>
+        </div>
+        <!--<div class="col-12">
+    <select class="form-select" name="Estado" id="validacionEstado" [(ngModel)]="cita.estadoId" required>
+      <option value="" disabled selected>Selecciona el estado</option>
+      <option *ngFor="let estado of estados" [value]="estado.id">{{ estado.nombre }}</option>
+    </select>
+    <div class="invalid-feedback">
+      Por favor seleccion un estado.
+    </div>
+  </div>-->
+
+        <div class="col-12">
+          <select class="form-select" name="Cliente" id="validacionCliente" [(ngModel)]="cita.clienteId" required>
+            <option value="" disabled selected>Selecciona un cliente</option>
+            <option *ngFor="let cliente of clientes" [value]="cliente.id">{{ cliente.nombre }} {{ cliente.apellido }}</option>
+          </select>
+          <div class="invalid-feedback">
+            Por favor seleccion un cliente.
+          </div>
+        </div>
+        <div class="col-12  d-flex justify-content-end">
+          <button *ngIf="citaId === 0" class="btn btn-primary" type="submit" [disabled]="creandoCita" (click)="iniciarValidadores()">
+            <span *ngIf="!creandoCita">Crear cita</span>
+            <span *ngIf="creandoCita">Creando cita...</span>
+          </button>
+
+          <button *ngIf="citaId !== 0" class="btn btn-primary" type="submit" [disabled]="creandoCita" (click)="iniciarValidadores()">
+            <span *ngIf="!creandoCita">Actualizar</span>
+            <span *ngIf="creandoCita">Actualizando...</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
