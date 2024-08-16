@@ -3,6 +3,8 @@ import { ClienteService } from '../services/cliente-service';
 import { Cliente } from '../Models/Cliente';
 import { UbicacionService } from '../services/ubicacion-service';
 import { CityStateService } from '../services/city-state.service';
+import { AlertService } from '../services/AlertService';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-client',
@@ -25,7 +27,8 @@ export class CreateClientComponent implements OnInit {
   constructor(
     private clienteService: ClienteService,
     private ubicacionService: UbicacionService,
-    private cityStateService: CityStateService
+    private cityStateService: CityStateService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -167,6 +170,7 @@ export class CreateClientComponent implements OnInit {
 
         this.cerrarForm();
         this.creandoCliente = false;
+        this.alertService.showMessage('Cliente creado con exito.');
       }, error => {
         this.errorMensaje = error.message;
         this.creandoCliente = false;
@@ -183,6 +187,7 @@ export class CreateClientComponent implements OnInit {
 
         this.cerrarForm();
         this.creandoCliente = false;
+        this.alertService.showMessage('Cliente actualizado con exito.');
       }, () => {
         this.creandoCliente = false;
         this.formValidado = false;

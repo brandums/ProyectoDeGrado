@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RecordatorioService } from '../services/recordatorio-service';
 import { Recordatorio } from '../Models/Recordatorio';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-reminder-list',
@@ -16,7 +17,10 @@ export class ReminderListComponent implements OnInit {
 
   campoFiltro: string = 'cliente.nombre';
 
-  constructor(private recordatorioService: RecordatorioService) { }
+  constructor(
+    private recordatorioService: RecordatorioService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit(): void {
     this.getRecordatorios();
@@ -55,7 +59,8 @@ export class ReminderListComponent implements OnInit {
 
   eliminarRecordatorio(id: number): void {
     this.recordatorioService.eliminarRecordatorio(id).subscribe(() => {
-        this.recordatorios = this.recordatorios.filter(recordatorio => recordatorio.id !== id);
+      this.recordatorios = this.recordatorios.filter(recordatorio => recordatorio.id !== id);
+      this.alertService.showMessage('Recordatorio eliminado con exito.');
       });
   }
 
@@ -67,7 +72,9 @@ export class ReminderListComponent implements OnInit {
   }
 
   cambiarPagina(pagina: number): void {
-    this.paginaActual = pagina;
+    if (pagina >= 1 && pagina <= this.totalPaginas) {
+      this.paginaActual = pagina;
+    }
   }
 
   get totalPaginas(): number {

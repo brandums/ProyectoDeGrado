@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Caso } from '../Models/Caso';
 import { CasoService } from '../services/caso-service';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-case-list',
@@ -18,6 +19,7 @@ export class CaseListComponent implements OnInit {
 
   constructor(
     private casoService: CasoService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -58,6 +60,7 @@ export class CaseListComponent implements OnInit {
     this.casoService.eliminarCaso(id)
       .subscribe(() => {
         this.casos = this.casos.filter(caso => caso.id !== id);
+        this.alertService.showMessage('Caso eliminado con exito.');
       });
   }
 
@@ -69,7 +72,9 @@ export class CaseListComponent implements OnInit {
   }
 
   cambiarPagina(pagina: number): void {
-    this.paginaActual = pagina;
+    if (pagina >= 1 && pagina <= this.totalPaginas) {
+      this.paginaActual = pagina;
+    }
   }
 
   get totalPaginas(): number {

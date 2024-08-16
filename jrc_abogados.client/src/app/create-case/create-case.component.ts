@@ -10,6 +10,7 @@ import { JuzgadoService } from '../services/juzgado-service';
 import { Cliente } from '../Models/Cliente';
 import { ClienteService } from '../services/cliente-service';
 import { CityStateService } from '../services/city-state.service';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-create-case',
@@ -37,7 +38,8 @@ export class CreateCaseComponent implements OnInit {
     private juzgadoService: JuzgadoService,
     private tipoCasoService: TipoCasoService,
     private estadoService: EstadoService,
-    private cityStateService: CityStateService
+    private cityStateService: CityStateService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -175,6 +177,7 @@ export class CreateCaseComponent implements OnInit {
 
           this.cerrarForm();
           this.creandoCaso = false;
+          this.alertService.showMessage('Caso creado con exito.');
         }, error => {
           this.errorMensaje = error.message;
           this.creandoCaso = false;
@@ -193,6 +196,7 @@ export class CreateCaseComponent implements OnInit {
 
           this.cerrarForm();
           this.creandoCaso = false;
+          this.alertService.showMessage('Caso actualizado con exito.');
         }, () => {
           this.creandoCaso = false;
           this.formValidado = false;
@@ -212,6 +216,7 @@ export class CreateCaseComponent implements OnInit {
     this.caso = new Caso;
     this.tituloForm = "Crear nuevo Caso"
     this.formValidado = false;
+    this.errorMensaje = null;
 
     const forms = document.querySelectorAll('.needs-validation');
     Array.from(forms).forEach((form: Element) => {

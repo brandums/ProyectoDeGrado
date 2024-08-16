@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   isSubmitted: boolean = false;
   errorMessage: string | null = null;
   loggingIn = false;
+  captchaResponse: string | null = null;
 
   constructor(
     private authService: AuthService,
@@ -20,18 +21,34 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+
+  ngAfterViewInit(): void {
+    if (typeof grecaptcha !== 'undefined') {
+      grecaptcha.render('recaptcha-element', {
+        sitekey: '6Le6RScqAAAAAJ2BPfa0I0Vm8EsNsaNhQsDBZBqZ',
+        callback: (response: string) => {
+          this.captchaResponse = response;
+        }
+      });
+    } else {
+      console.log('grecaptcha is not available');
+    }
+  }
+
 
   onSubmit(form: any) {
     this.loggingIn = true;
     this.isSubmitted = true;
     this.errorMessage = null;
 
-    if (form.invalid) {
+    if (form.invalid || !this.captchaResponse) {
+      this.loggingIn = false;
       return;
     }
 
-    this.authService.login(this.email, this.password).subscribe({
+    this.authService.login(this.email, this.password, this.captchaResponse).subscribe({
       next: (response) => {
         this.loggingIn = false;
         this.router.navigate(['/']);

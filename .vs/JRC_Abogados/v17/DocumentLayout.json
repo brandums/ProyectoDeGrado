@@ -3,28 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.server\\controllers\\casocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|solutionrelative:jrc_abogados.server\\controllers\\casocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|solutionrelative:jrc_abogados.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\case-list\\case-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\case-list\\case-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\appointment-list\\appointment-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\appointment-list\\appointment-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\configuracion.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
@@ -43,71 +23,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CasoController.cs",
-              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\JRC_Abogados.Server\\Controllers\\CasoController.cs",
-              "RelativeDocumentMoniker": "JRC_Abogados.Server\\Controllers\\CasoController.cs",
-              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\JRC_Abogados.Server\\Controllers\\CasoController.cs",
-              "RelativeToolTip": "JRC_Abogados.Server\\Controllers\\CasoController.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwFEAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-10T22:47:05.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "case-list.component.html",
-              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\case-list\\case-list.component.html",
-              "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\case-list\\case-list.component.html",
-              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\case-list\\case-list.component.html",
-              "RelativeToolTip": "jrc_abogados.client\\src\\app\\case-list\\case-list.component.html",
-              "ViewState": "AQIAAEgAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-10T22:46:06.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appointment-list.component.html",
-              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\appointment-list\\appointment-list.component.html",
-              "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\appointment-list\\appointment-list.component.html",
-              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\appointment-list\\appointment-list.component.html",
-              "RelativeToolTip": "jrc_abogados.client\\src\\app\\appointment-list\\appointment-list.component.html",
-              "ViewState": "AQIAADwAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-10T22:45:53.297Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "create-appointment.component.ts",
-              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.ts",
-              "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.ts",
-              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.ts",
-              "RelativeToolTip": "jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.ts",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2024-08-10T20:08:16.137Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "create-appointment.component.html",
-              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.html",
-              "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.html",
-              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.html",
-              "RelativeToolTip": "jrc_abogados.client\\src\\app\\create-appointment\\create-appointment.component.html",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAGEAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-08-10T20:08:03.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\JRC_Abogados.Server\\Program.cs",
               "RelativeDocumentMoniker": "JRC_Abogados.Server\\Program.cs",
@@ -120,7 +35,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "configuracion.ts",
               "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\configuracion.ts",
               "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\configuracion.ts",

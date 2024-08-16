@@ -25,6 +25,7 @@ C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

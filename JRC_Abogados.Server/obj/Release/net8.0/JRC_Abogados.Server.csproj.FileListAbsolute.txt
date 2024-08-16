@@ -139,3 +139,5 @@ C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\JRC_Abogados.Server.pdb
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\JRC_Abogados.Server.genruntimeconfig.cache
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\ref\JRC_Abogados.Server.dll
+C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Release\net8.0\JRC_Abogados.Server.sourcelink.json
+C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Release\net8.0\Newtonsoft.Json.dll

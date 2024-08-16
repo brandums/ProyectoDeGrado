@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../Models/Cliente';
 import { ClienteService } from '../services/cliente-service';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-client-list',
@@ -16,7 +17,10 @@ export class ClientListComponent implements OnInit {
 
   campoFiltro: string = 'nombre';
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(
+    private clienteService: ClienteService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit(): void {
     this.getClientes();
@@ -53,6 +57,7 @@ export class ClientListComponent implements OnInit {
     this.clienteService.eliminarCliente(id)
       .subscribe(() => {
         this.clientes = this.clientes.filter(cliente => cliente.id !== id);
+        this.alertService.showMessage('Cliente eliminado con exito.');
       });
   }
 
@@ -64,11 +69,14 @@ export class ClientListComponent implements OnInit {
   }
 
   cambiarPagina(pagina: number): void {
-    this.paginaActual = pagina;
+    if (pagina >= 1 && pagina <= this.totalPaginas) {
+      this.paginaActual = pagina;
+    }
   }
 
   get totalPaginas(): number {
     return Math.ceil(this.filtroClientes.length / this.clientesPorPagina);
   }
+
 }
 

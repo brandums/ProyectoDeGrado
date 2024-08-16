@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -32,6 +33,13 @@ namespace JRC_Abogados.Server.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDTO loginDto)
         {
+            var isCaptchaValid = await VerifyCaptcha(loginDto.CaptchaResponse);
+
+            if (!isCaptchaValid)
+            {
+                return Unauthorized(new { message = "Captcha inválido." });
+            }
+
             var usuario = await _context.Empleado.FirstOrDefaultAsync(u => u.CorreoElectronico == loginDto.CorreoElectronico);
 
             if (usuario == null)
@@ -73,6 +81,19 @@ namespace JRC_Abogados.Server.Controllers
             await controller.CheckAndSendReminders();
 
             return Ok(new { Token = tokenString, Usuario = usuario });
+        }
+
+        private async Task<bool> VerifyCaptcha(string captchaResponse)
+        {
+            var secretKey = _configuration["ReCaptcha:SecretKey"];
+            var apiUrl = $"https://www.google.com/recaptcha/api/siteverify?secret={secretKey}&response={captchaResponse}";
+
+            using (var client = new HttpClient())
+            {
+                var result = await client.GetStringAsync(apiUrl);
+                var captchaVerification = JsonConvert.DeserializeObject<ReCaptchaVerification>(result);
+                return captchaVerification.Success;
+            }
         }
     }
 }

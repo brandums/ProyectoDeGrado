@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cita } from '../Models/Cita';
 import { CitaService } from '../services/cita-service';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-appointment-list',
@@ -18,6 +19,7 @@ export class AppointmentListComponent implements OnInit {
 
   constructor(
     private citaService: CitaService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -57,6 +59,7 @@ export class AppointmentListComponent implements OnInit {
   eliminarCita(id: number): void {
     this.citaService.eliminarCita(id).subscribe(() => {
       this.citas = this.citas.filter(cita => cita.id !== id);
+      this.alertService.showMessage('Cita eliminada con exito.');
     });
   }
 
@@ -68,7 +71,9 @@ export class AppointmentListComponent implements OnInit {
   }
 
   cambiarPagina(pagina: number): void {
-    this.paginaActual = pagina;
+    if (pagina >= 1 && pagina <= this.totalPaginas) {
+      this.paginaActual = pagina;
+    }
   }
 
   get totalPaginas(): number {

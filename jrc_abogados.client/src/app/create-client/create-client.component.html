@@ -20,6 +20,7 @@
         </div>
         <div class="col-12">
           <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">Fecha de nacimiento</span>
             <input type="date" class="form-control" name="Fecha" id="validacionFecha" placeholder="Fecha" [max]="FechaMaxima()" [min]="FechaMinima()" onkeydown="return false" [(ngModel)]="cliente.fechaNacimiento" required />
             <div class="invalid-feedback">
               Por favor seleccione una fecha.

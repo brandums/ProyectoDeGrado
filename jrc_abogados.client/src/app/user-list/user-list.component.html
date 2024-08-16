@@ -27,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let usuario of filtroUsuarios">
+      <tr *ngFor="let usuario of usuariosPaginados">
         <td>
           <i class="fas fa-eye" (click)="verUsuario(usuario)" data-bs-toggle="modal" data-bs-target="#user-detail-modal"></i>
         </td>

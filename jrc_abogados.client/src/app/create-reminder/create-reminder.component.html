@@ -7,7 +7,7 @@
     <div class="modal-body">
       <form class="row g-3 needs-validation" name="formularioRecordatorio" novalidate>
         <div class="col-12">
-          <input type="text" class="form-control" name="Titulo" id="validacionTitulo" placeholder="Titulo" minlength="5" maxlength="30" onpaste="return false;" (keydown)="validarTexto($event)" [(ngModel)]="recordatorio.titulo" required>
+          <input type="text" class="form-control" name="Titulo" id="validacionTitulo" placeholder="Titulo" minlength="5" maxlength="80" onpaste="return false;" [(ngModel)]="recordatorio.titulo" required>
           <div class="invalid-feedback">
             {{ !recordatorio.titulo ? 'Por favor ingrese un titulo.' : 'Ingrese un titulo mas completo.' }}
           </div>
@@ -22,7 +22,7 @@
           <div class="col-7" style="padding-right: 10px">
             <div class="input-group has-validation">
               <span class="input-group-text" id="inputGroupPrepend">Fecha:</span>
-              <input type="date" class="form-control" name="Fecha" id="validacionFecha" placeholder="Fecha" [min]="obtenerFecha()" onkeydown="return false" [(ngModel)]="recordatorio.fecha" required />
+              <input type="date" class="form-control" name="Fecha" id="validacionFecha" placeholder="Fecha" [min]="obtenerFecha()" [max]="FechaMaxima()" onkeydown="return false" [(ngModel)]="recordatorio.fecha" required />
               <div class="invalid-feedback">
                 Por favor seleccione una fecha.
               </div>

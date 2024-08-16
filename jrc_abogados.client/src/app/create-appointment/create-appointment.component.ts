@@ -7,6 +7,7 @@ import { EstadoService } from '../services/estado-service';
 import { Cliente } from '../Models/Cliente';
 import { ClienteService } from '../services/cliente-service';
 import { CityStateService } from '../services/city-state.service';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-create-appointment',
@@ -29,7 +30,8 @@ export class CreateAppointmentComponent implements OnInit {
     private citaService: CitaService,
     private ubicacionService: UbicacionService,
     private estadoService: EstadoService,
-    private cityStateService: CityStateService
+    private cityStateService: CityStateService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -146,6 +148,7 @@ export class CreateAppointmentComponent implements OnInit {
 
         this.cerrarForm();
         this.creandoCita = false;
+        this.alertService.showMessage('Cita creada con exito.');
       }, () => {
         this.creandoCita = false;
         this.formValidado = false;
@@ -161,6 +164,7 @@ export class CreateAppointmentComponent implements OnInit {
 
         this.cerrarForm();
         this.creandoCita = false;
+        this.alertService.showMessage('Cita actualizada con exito.');
       }, () => {
         this.creandoCita = false;
         this.formValidado = false;

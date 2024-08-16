@@ -29,7 +29,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let recordatorio of filtroRecordatorios">
+      <tr *ngFor="let recordatorio of clientesPaginados">
         <td>
           <i class="fas fa-eye" (click)="verRecordatorio(recordatorio)" data-bs-toggle="modal" data-bs-target="#reminder-detail-modal"></i>
         </td>

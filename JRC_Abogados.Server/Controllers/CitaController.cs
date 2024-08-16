@@ -58,30 +58,85 @@ namespace JRC_Abogados.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Cita>> PostCita(Cita cita)
         {
-            string emailSubject = "Tienes una cita con JRC Abogados!";
-#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
-            string emailBody = $"La cita esta programada este {cita.FechaInicio.Date} en la ciudad {cita.Ubicacion.Ciudad}. Codigo Postal: {cita.Ubicacion.CodigoPostal}.";
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
-
             cita.Cliente = await _context.Cliente.FindAsync(cita.ClienteId);
-#pragma warning disable CS8602 // Desreferencia de una referencia posiblemente NULL.
+
+            cita.Estado = await _context.Estado.FindAsync(cita.EstadoId);
+
+            _context.Cita.Add(cita);
+            await _context.SaveChangesAsync();
+
+            string confirmUrl = $"https://backendjrc-001-site1.ftempurl.com/api/Cita/confirmar/{cita.Id}";
+            string cancelUrl = $"https://backendjrc-001-site1.ftempurl.com/api/Cita/cancelar/{cita.Id}";
+
+            string emailSubject = "Confirmación de Cita";
+            string emailBody = $@"
+                <p>Estimado/a {cita.Cliente.Nombre},</p>
+                <p>Esperamos que se encuentre bien.</p>
+                <p>Le escribimos para confirmar su cita programada con nosotros para el día {cita.FechaInicio.Date.ToShortDateString()} a las {cita.Hora}. </p>
+                <p>Para confirmar su cita, haga clic en el siguiente botón:</p>
+                <a href='{confirmUrl}' style='padding: 10px 20px; color: white; background-color: blue; text-decoration: none;'>Confirmar</a>
+                <p>Si desea cancelar la cita, puede hacerlo haciendo clic en el siguiente botón:</p>
+                <a href='{cancelUrl}' style='padding: 10px 20px; color: white; background-color: red; text-decoration: none;'>Cancelar</a>
+                <p>En caso de necesitar reprogramar su cita, le agradeceríamos que nos lo notificara lo antes posible para poder reprogramarla a una fecha y hora más conveniente para usted.</p>
+                <p>Quedamos atentos a su respuesta.</p>
+                <p>Gracias por su atención.</p>
+                <p>Saludos cordiales,</p>
+                <p>Equipo JRC Abogados.</p>
+            ";
+
+
             bool resultado = await _emailSender.SendEmailAsync(cita.Cliente.CorreoElectronico, emailSubject, emailBody);
-#pragma warning restore CS8602 // Desreferencia de una referencia posiblemente NULL.
 
             if (resultado)
             {
-                cita.Ubicacion = null;
-                cita.Estado = null;
-                cita.Cliente = null;
-
-                _context.Cita.Add(cita);
-                await _context.SaveChangesAsync();
-
                 return CreatedAtAction("GetCita", new { id = cita.Id }, cita);
             }
 
             return BadRequest();
         }
+
+        [AllowAnonymous]
+        [HttpGet("confirmar/{id}")]
+        public async Task<IActionResult> ConfirmarCita(int id)
+        {
+            var cita = await _context.Cita.FindAsync(id);
+            if (cita == null)
+            {
+                return NotFound(new { message = "Cita no encontrada." });
+            }
+
+            var cliente = await _context.Cliente.FindAsync(cita.ClienteId);
+
+            string emailSubject = "Estado de su Cita";
+            string emailBody = $@"
+                <p>Estimado/a {cliente.Nombre},</p>
+                <p>Gracias por su respuesta. Le informamos que su cita para el día {cita.FechaInicio.Date.ToShortDateString()} a las {cita.FechaInicio.ToShortTimeString()} ha sido confirmada.</p>
+                <p>Atentamente,</p>
+                <p>Equipo JRC Abogados.</p>
+            ";
+
+            cita.EstadoId = 2;
+            await _context.SaveChangesAsync();
+
+            return Redirect("https://backendjrc-001-site1.ftempurl.com");
+        }
+
+        [AllowAnonymous]
+        [HttpGet("cancelar/{id}")]
+        public async Task<IActionResult> CancelarCita(int id)
+        {
+            var cita = await _context.Cita.FindAsync(id);
+            if (cita == null)
+            {
+                return NotFound(new { message = "Cita no encontrada." });
+            }
+
+            cita.EstadoId = 3;
+            await _context.SaveChangesAsync();
+
+            return Redirect("https://backendjrc-001-site1.ftempurl.com");
+        }
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCita(int id, Cita cita)

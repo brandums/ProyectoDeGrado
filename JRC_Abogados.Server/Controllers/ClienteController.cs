@@ -4,6 +4,7 @@ using JRC_Abogados.Server.Models.EmailHelper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace JRC_Abogados.Server.Controllers
 {
@@ -60,6 +61,21 @@ namespace JRC_Abogados.Server.Controllers
                 return Conflict(new { message = "El cliente ya está registrado con este correo electrónico." });
             }
 
+            SendEmail(cliente);
+
+            TextInfo textInfo = CultureInfo.CurrentCulture.TextInfo;
+            cliente.Nombre = textInfo.ToTitleCase(cliente.Nombre.ToLower());
+            cliente.Apellido = textInfo.ToTitleCase(cliente.Apellido.ToLower());
+            cliente.Ubicacion = null;
+            _context.Cliente.Add(cliente);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetCliente", new { id = cliente.Id }, cliente);
+        }
+
+        [HttpGet("sendCreationEmail")]
+        public async void SendEmail(Cliente cliente)
+        {
             string emailSubject = "¡Bienvenido a JRC Abogados!";
             string emailBody = $"<p>Estimado/a {cliente.Nombre},</p>" +
                    "<p>Es un placer para nosotros darle la más cordial bienvenida a JRC Abogados. Agradecemos la confianza que ha depositado en nuestro equipo para atender sus necesidades legales.</p>" +
@@ -70,19 +86,9 @@ namespace JRC_Abogados.Server.Controllers
                    "Equipo de JRC Abogados</p>";
 
 
-            bool resultado = await _emailSender.SendEmailAsync(cliente.CorreoElectronico, emailSubject, emailBody);
-
-            if (resultado)
-            {
-                cliente.Ubicacion = null;
-                _context.Cliente.Add(cliente);
-                await _context.SaveChangesAsync();
-
-                return CreatedAtAction("GetCliente", new { id = cliente.Id }, cliente);
-            }
-
-            return BadRequest();
+            await _emailSender.SendEmailAsync(cliente.CorreoElectronico, emailSubject, emailBody);
         }
+
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCliente(int id, Cliente cliente)

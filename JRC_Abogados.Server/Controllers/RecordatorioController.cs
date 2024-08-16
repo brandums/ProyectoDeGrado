@@ -83,9 +83,20 @@ namespace JRC_Abogados.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Recordatorio>> PostRecordatorio(RecordatorioDTO recordatorioDTO)
         {
-            string emailSubject = "Nuevo Recordatorio!";
-            string emailBody = $"{recordatorioDTO.Descripcion}!";
             var cliente = await _context.Cliente.FindAsync(recordatorioDTO.ClienteId);
+
+            string emailSubject = "Nuevo Recordatorio!";
+            string emailBody = $@"
+                <p>Asunto: Recordatorio Importante de JRC Abogados</p>
+                <p>Estimado/a {cliente.Nombre},</p>
+                <p>Esperamos que se encuentre bien. Nos dirigimos a usted para recordarle que {recordatorioDTO.Descripcion}. La fecha programada es el {recordatorioDTO.Fecha.Date.ToShortDateString()} a las {recordatorioDTO.Hora}.</p>
+                <p>Le recomendamos que revise toda la documentación necesaria y se asegure de que todo esté en orden antes de esa fecha. Si necesita asistencia adicional o tiene alguna pregunta, no dude en ponerse en contacto con nosotros.</p>
+                <p>Estamos aquí para ayudarle en todo lo que necesite.</p>
+                <p>Gracias por su atención a este asunto.</p>
+                <p>Saludos cordiales,</p>
+                <p>Equipo JRC Abogados.</p>
+            ";
+
             await _emailSender.SendEmailAsync(cliente.CorreoElectronico, emailSubject, emailBody);
 
             Recordatorio recordatorio = new Recordatorio();

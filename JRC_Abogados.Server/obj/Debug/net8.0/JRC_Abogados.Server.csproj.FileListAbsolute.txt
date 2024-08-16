@@ -35,6 +35,7 @@ C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\ne
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -125,6 +126,7 @@ C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\ne
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\net8.0\JRC_Abogados.Server.csproj.CoreCompileInputs.cache
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\net8.0\JRC_Abogados.Server.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\net8.0\JRC_Abogados.Server.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\net8.0\JRC_Abogados.Server.sourcelink.json
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\brran\OneDrive\Escritorio\JRC_Abogados\JRC_Abogados.Server\obj\Debug\net8.0\staticwebassets\msbuild.JRC_Abogados.Server.Microsoft.AspNetCore.StaticWebAssets.props

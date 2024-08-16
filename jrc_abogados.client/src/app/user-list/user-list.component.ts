@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../services/usuario-service';
 import { Usuario } from '../Models/Usuario';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-user-list',
@@ -16,7 +17,10 @@ export class UserListComponent implements OnInit {
 
   campoFiltro: string = 'nombre';
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(
+    private usuarioService: UsuarioService,
+    private alertService: AlertService
+  ) { }
 
   ngOnInit(): void {
     this.getUsuarios();
@@ -58,6 +62,7 @@ export class UserListComponent implements OnInit {
     this.usuarioService.eliminarUsuario(id)
       .subscribe(() => {
         this.usuarios = this.usuarios.filter(usuario => usuario.id !== id);
+        this.alertService.showMessage('Empleado eliminado con exito.');
       });
   }
 
@@ -69,7 +74,9 @@ export class UserListComponent implements OnInit {
   }
 
   cambiarPagina(pagina: number): void {
-    this.paginaActual = pagina;
+    if (pagina >= 1 && pagina <= this.totalPaginas) {
+      this.paginaActual = pagina;
+    }
   }
 
   get totalPaginas(): number {

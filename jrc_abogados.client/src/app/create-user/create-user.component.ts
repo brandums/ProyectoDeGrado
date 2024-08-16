@@ -3,6 +3,7 @@ import { Usuario } from '../Models/Usuario';
 import { UsuarioService } from '../services/usuario-service';
 import { RolService } from '../services/rol-service';
 import { Rol } from '../Models/Rol';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-create-user',
@@ -28,6 +29,7 @@ export class CreateUserComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private rolService: RolService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -129,6 +131,7 @@ export class CreateUserComponent implements OnInit {
 
       this.cerrarForm();
       this.creandoUsuario = false;
+      this.alertService.showMessage('Empleado creado con exito.');
     }, error => {
       this.errorMensaje = error.message;
       this.creandoUsuario = false;
@@ -143,6 +146,7 @@ export class CreateUserComponent implements OnInit {
 
       this.cerrarForm();
       this.creandoUsuario = false;
+      this.alertService.showMessage('Empleado actualizado con exito.');
     }, () => {
       this.creandoUsuario = false;
       this.formValidado = false;

@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { AuthService } from './services/AuthService';
 import { Router } from '@angular/router';
+import { AlertService } from './services/AlertService';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private cdr: ChangeDetectorRef,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
     )
   { }
 
@@ -28,6 +30,26 @@ export class AppComponent implements OnInit {
       }
       this.cdr.detectChanges();
     });
+
+    this.alertService.showModal$.subscribe(() => {
+      this.openModal();
+    });
+
+    this.alertService.message$.subscribe(message => {
+      this.setMessage(message);
+    });
+  }
+
+  openModal() {
+    const btnOpen = document.getElementById('abrir-modal');
+    btnOpen?.click();
+  }
+
+  setMessage(message: string) {
+    const messageElement = document.getElementById('message-text');
+    if (messageElement) {
+      messageElement.textContent = message;
+    }
   }
 
   title = 'jrc_abogados.client';

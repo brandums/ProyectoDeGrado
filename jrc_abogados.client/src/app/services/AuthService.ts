@@ -40,8 +40,8 @@ export class AuthService {
     sessionStorage.setItem('keepLoggedIn', 'true');
   }
 
-  login(correoElectronico: string, contraseña: string): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/login`, { correoElectronico, contraseña })
+  login(correoElectronico: string, contraseña: string, captchaResponse: string): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/login`, { correoElectronico, contraseña, captchaResponse })
       .pipe(map(response => {
         localStorage.setItem('usuario', JSON.stringify(response.usuario));
         localStorage.setItem('token', response.token);

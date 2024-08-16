@@ -3,6 +3,7 @@ import { RecordatorioService } from '../services/recordatorio-service';
 import { Recordatorio } from '../Models/Recordatorio';
 import { Cliente } from '../Models/Cliente';
 import { ClienteService } from '../services/cliente-service';
+import { AlertService } from '../services/AlertService';
 
 @Component({
   selector: 'app-create-reminder',
@@ -18,7 +19,8 @@ export class CreateReminderComponent implements OnInit {
 
   constructor(
     private recordatorioService: RecordatorioService,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private alertService: AlertService
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +44,15 @@ export class CreateReminderComponent implements OnInit {
     const fechaActual = new Date();
     const formatoFecha = fechaActual.toISOString().split('T')[0];
 
+    return formatoFecha;
+  }
+
+  FechaMaxima(): string {
+    const fechaActual = new Date();
+    const fechaFutura = new Date(fechaActual);
+    fechaFutura.setFullYear(fechaActual.getFullYear() + 3);
+
+    const formatoFecha = fechaFutura.toISOString().split('T')[0];
     return formatoFecha;
   }
 
@@ -91,6 +102,7 @@ export class CreateReminderComponent implements OnInit {
 
       this.cerrarForm();
       this.creandoRecordatorio = false;
+      this.alertService.showMessage('Recordatorio creado con exito.');
     }, () => {
       this.creandoRecordatorio = false;
     })
@@ -103,6 +115,7 @@ export class CreateReminderComponent implements OnInit {
 
       this.cerrarForm();
       this.creandoRecordatorio = false;
+      this.alertService.showMessage('Recordatorio actualizado con exito.');
     }, () => {
       this.creandoRecordatorio = false;
     })
