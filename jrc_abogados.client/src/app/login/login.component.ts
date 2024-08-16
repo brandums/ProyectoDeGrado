@@ -21,10 +21,13 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   ngAfterViewInit(): void {
+    this.renderCaptcha()
+  }
+
+  renderCaptcha() {
     if (typeof grecaptcha !== 'undefined') {
       grecaptcha.render('recaptcha-element', {
         sitekey: '6Le6RScqAAAAAJ2BPfa0I0Vm8EsNsaNhQsDBZBqZ',
@@ -37,6 +40,14 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  rechargeCaptcha() {
+    if (typeof grecaptcha !== 'undefined') {
+      grecaptcha.reset();
+      this.captchaResponse = null;
+    } else {
+      console.log('grecaptcha is not available');
+    }
+  }
 
   onSubmit(form: any) {
     this.loggingIn = true;
@@ -57,6 +68,7 @@ export class LoginComponent implements OnInit {
         this.errorMessage = err.error?.message || 'Error desconocido.';
         this.loggingIn = false;
         console.error('Error en el inicio de sesión', err);
+        this.rechargeCaptcha();
       }
     });
   }

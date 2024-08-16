@@ -43,6 +43,11 @@ export class AppComponent implements OnInit {
   openModal() {
     const btnOpen = document.getElementById('abrir-modal');
     btnOpen?.click();
+
+    setTimeout(() => {
+      const btnClose = document.getElementById('btn-close-modal');
+      btnClose?.click();
+    }, 2000);
   }
 
   setMessage(message: string) {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JRC_Abogados.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f97e59e8646acbba26fc83f8a9aa05f6517e6a5e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+73f50dfc32fe8d49208e069fa67326178350d150")]
 [assembly: System.Reflection.AssemblyProductAttribute("JRC_Abogados.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JRC_Abogados.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

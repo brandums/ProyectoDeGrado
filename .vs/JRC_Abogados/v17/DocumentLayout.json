@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|solutionrelative:jrc_abogados.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\app.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\configuracion.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\configuracion.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.client\\src\\app\\login\\login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E9E5B2CF-7730-4126-9CE5-E1F8F0FB1D88}|jrc_abogados.client\\jrc_abogados.client.esproj|solutionrelative:jrc_abogados.client\\src\\app\\login\\login.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|c:\\users\\brran\\onedrive\\escritorio\\jrc_abogados\\jrc_abogados.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D46456FB-5C8B-4149-A219-D2F51E719C62}|JRC_Abogados.Server\\JRC_Abogados.Server.csproj|solutionrelative:jrc_abogados.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +30,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.component.html",
+              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\app.component.html",
+              "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\app.component.html",
+              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\app.component.html",
+              "RelativeToolTip": "jrc_abogados.client\\src\\app\\app.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-16T21:19:28.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "app.component.ts",
+              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\app.component.ts",
+              "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\app.component.ts",
+              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\app.component.ts",
+              "RelativeToolTip": "jrc_abogados.client\\src\\app\\app.component.ts",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwDEAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2024-08-16T21:16:51.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "login.component.html",
+              "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\login\\login.component.html",
+              "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\login\\login.component.html",
+              "ToolTip": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\login\\login.component.html",
+              "RelativeToolTip": "jrc_abogados.client\\src\\app\\login\\login.component.html",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAADIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2024-08-16T20:46:07.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\JRC_Abogados.Server\\Program.cs",
               "RelativeDocumentMoniker": "JRC_Abogados.Server\\Program.cs",
@@ -35,7 +86,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "configuracion.ts",
               "DocumentMoniker": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\src\\app\\configuracion.ts",
               "RelativeDocumentMoniker": "jrc_abogados.client\\src\\app\\configuracion.ts",

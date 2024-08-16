@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "untDkPQyoRfw4Q/QSFZSfKpidhu0ZaItBCHKffVHyBQ=",
+  "Hash": "pullOapAZvckfuTyCEJubIh79k9xw2Cdoy7H6yuYsbM=",
   "Source": "JRC_Abogados.Server",
   "BasePath": "_content/JRC_Abogados.Server",
   "Mode": "Default",
@@ -249,12 +249,12 @@
       "OriginalItemSpec": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\dist\\jrc_abogados.client\\index.html"
     },
     {
-      "Identity": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\dist\\jrc_abogados.client\\main.41595dbaa243474b.js",
+      "Identity": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\dist\\jrc_abogados.client\\main.1a34704952baccc2.js",
       "SourceId": "jrc_abogados.client",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\dist\\jrc_abogados.client\\",
       "BasePath": "/",
-      "RelativePath": "main.41595dbaa243474b.js",
+      "RelativePath": "main.1a34704952baccc2.js",
       "AssetKind": "Publish",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -265,7 +265,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\dist\\jrc_abogados.client\\main.41595dbaa243474b.js"
+      "OriginalItemSpec": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\dist\\jrc_abogados.client\\main.1a34704952baccc2.js"
     },
     {
       "Identity": "C:\\Users\\brran\\OneDrive\\Escritorio\\JRC_Abogados\\jrc_abogados.client\\dist\\jrc_abogados.client\\polyfills.2247ba98e3e36334.js",
